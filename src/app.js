@@ -7,6 +7,8 @@ const forecast = require("./utils/forecast");
 
 const app = express();
 
+//
+
 // Define paths for express config
 const publicPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
