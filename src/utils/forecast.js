@@ -7,6 +7,8 @@ const forecast = (latitude, longitude, callback) => {
     "," +
     latitude +
     "&units=m";
+
+  console.log(url);
   request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to weather service", undefined);
@@ -24,7 +26,9 @@ const forecast = (latitude, longitude, callback) => {
           body.current.feelslike +
           "C) with " +
           body.current.precip +
-          "% chance rain"
+          "% chance rain." +
+          " UV index: " +
+          body.current.uv_index
       );
     }
   });
